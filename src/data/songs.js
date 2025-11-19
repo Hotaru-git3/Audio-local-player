@@ -6,7 +6,7 @@ export const dataLagu = [
     album: "Lagipula Hidup Akan Berakhir",
     durasi: "3:58",
     cover: "/img/lagipula hidup akan berakhir.jpg", 
-    url: "/public/songs/Hindia - Iya...Sebentar (Official Lyric Video).mp3" 
+    url: "/songs/Iya.mp3" 
   },
   { 
     id: 2, 
@@ -15,7 +15,7 @@ export const dataLagu = [
     album: "Doves '25 on Black Canvas",
     durasi: "3:56",
     cover: "/img/Doves,_'25_on_Blank_Canvas.jpg", 
-    url: "/public/songs/Hindia - everything u are.mp3" 
+    url: "/songs/EverthingU.mp3" 
   },
   { 
     id: 3, 
@@ -23,8 +23,8 @@ export const dataLagu = [
     artis: "Hindia", 
     album: "Menari Dengan Bayangan",
     durasi: "4:37",
-    cover: "/public/img/Menari_dengan_bayangan.jpg", 
-    url: "/public/songs/Hindia - Rumah Ke Rumah (Official Lyric & Commentary Video).mp3" 
+    cover: "/img/Menari_dengan_bayangan.jpg", 
+    url: "/songs/Rumab.mp3" 
   },
   {
     id: 4, 
@@ -32,8 +32,8 @@ export const dataLagu = [
     artis: "Tuan Tiga Belas", 
     album: "Blunt Brothers",
     durasi: "3:26", 
-    cover: "/public/img/blunt brothers.jpg", 
-    url: "/public/songs/Tuantigabelas, SicknessMP ft Mary Su - Westside (Official Music Video).mp3" 
+    cover: "/img/blunt brothers.jpg", 
+    url: "/songs/Westside.mp3" 
   },
   { 
     id: 5, 
@@ -41,8 +41,8 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "What Do You Really Know?",
     durasi: "4:19", 
-    cover: "/public/img/what do you.jpg", 
-    url: "/public/songs/A Sorrowful Reunion - Reality Club (Official Lyric Video).mp3" 
+    cover: "/img/what do you.jpg", 
+    url: "/songs/A-Sorrowful.mp3" 
   },
   { 
     id: 6, 
@@ -50,8 +50,8 @@ export const dataLagu = [
     artis: "Nadin Amizah", 
     album: "Selamat Ulang Tahun",
     durasi: "5:20", 
-    cover: "/public/img/selamat ulang tahun.png", 
-    url: "/public/songs/Nadin Amizah - Bertaut (Official Music Video).mp3" 
+    cover: "/img/selamat ulang tahun.png", 
+    url: "/songs/Bertaut.mp3" 
   },
   { 
     id: 7, 
@@ -59,8 +59,8 @@ export const dataLagu = [
     artis: "Hindia", 
     album: "Doves '25 on Black Canvas",
     durasi: "3:01", 
-    cover: "/public/img/Doves,_'25_on_Blank_Canvas.jpg", 
-    url: "/public/songs/Hindia - kids.mp3" 
+    cover: "/img/Doves,_'25_on_Blank_Canvas.jpg", 
+    url: "/songs/Kids.mp3" 
   },
   { 
     id: 8, 
@@ -68,8 +68,8 @@ export const dataLagu = [
     artis: "Tuan Tiga Belas", 
     album: "Harimau Soematera",
     durasi: "3:51", 
-    cover: "/public/img/harimau soematera.jpg", 
-    url: "/public/songs/Tuan Tigabelas - Move (Lyric Video).mp3" 
+    cover: "/img/harimau soematera.jpg", 
+    url: "/songs/Move.mp3" 
   },
   { 
     id: 9, 
@@ -77,8 +77,8 @@ export const dataLagu = [
     artis: "For Revenge, Stereo Wall", 
     album: "Jakarta Hari Ini",
     durasi: "3:44", 
-    cover: "/public/img/jakarta hari ini.jpg", 
-    url: "/public/songs/For Revenge X Stereo Wall - Jakarta Hari Ini (Official Video).mp3" 
+    cover: "/img/jakarta hari ini.jpg", 
+    url: "/songs/Jakarta.mp3" 
   },
   { 
     id: 10, 
@@ -86,8 +86,8 @@ export const dataLagu = [
     artis: "Nadin Amizah", 
     album: "Untuk Dunia, Cinta, Dan Kotornya",
     durasi: "3:58", 
-    cover: "/public/img/untuk dunia cinta.jpg", 
-    url: "/public/songs/Nadin Amizah - Di Akhir Perang (Official Lyric Video).mp3" 
+    cover: "/img/untuk dunia cinta.jpg", 
+    url: "/songs/DiAkhir Perang.mp3" 
   },
   { 
     id: 11, 
@@ -95,8 +95,8 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "Anything You Want",
     durasi: "3:56", 
-    cover: "/public/img/anything you want.jpg", 
-    url: "/public/songs/Reality Club - Anything You Want (Official Lyric Video).mp3" 
+    cover: "/img/anything you want.jpg", 
+    url: "/songs/AnythingU Want.mp3" 
   },
   { 
     id: 12, 
@@ -104,8 +104,8 @@ export const dataLagu = [
     artis: "Payung Teduh", 
     album: "Dunia Batas",
     durasi: "5:42", 
-    cover: "/public/img/dunia batas.jpg", 
-    url: "/public/songs/Untuk Perempuan Yang Sedang Di Pelukan.mp3" 
+    cover: "/img/dunia batas.jpg", 
+    url: "/songs/UntukPerempuan.mp3" 
   },
   { 
     id: 13, 
@@ -113,8 +113,8 @@ export const dataLagu = [
     artis: "Hindia", 
     album: "Menari Dengan Bayangan",
     durasi: "6:19", 
-    cover: "/public/img/Menari_dengan_bayangan.jpg", 
-    url: "/public/songs/Hindia - Untuk Apa  Untuk Apa_ (Official Music Video).mp3" 
+    cover: "/img/Menari_dengan_bayangan.jpg", 
+    url: "/songs/Untukapa.mp3" 
   },
   { 
     id: 14, 
@@ -122,8 +122,8 @@ export const dataLagu = [
     artis: "Hindia", 
     album: "Lagipula Hidup Akan Berakhir",
     durasi: "4:02", 
-    cover: "/public/img/lagipula hidup akan berakhir.jpg", 
-    url: "/public/songs/Hindia - Janji Palsu (Official Lyric Video).mp3" 
+    cover: "/img/lagipula hidup akan berakhir.jpg", 
+    url: "/songs/Janji.mp3" 
   },
   { 
     id: 15, 
@@ -131,8 +131,8 @@ export const dataLagu = [
     artis: "Hindia", 
     album: "Lagipula Hidup Akan Berakhir",
     durasi: "3:13", 
-    cover: "/public/img/lagipula hidup akan berakhir.jpg", 
-    url: "/public/songs/Hindia - Bayangkan Jika Kita Tidak Menyerah (Official Lyric Video).mp3" 
+    cover: "/img/lagipula hidup akan berakhir.jpg", 
+    url: "/songs/Bayangkan.mp3" 
   },
   { 
     id: 16, 
@@ -140,8 +140,8 @@ export const dataLagu = [
     artis: "Payung Teduh", 
     album: "Dunia Batas",
     durasi: "4:00", 
-    cover: "/public/img/dunia batas.jpg", 
-    url: "/public/songs/Resah.mp3"
+    cover: "/img/dunia batas.jpg", 
+    url: "/songs/Resah.mp3"
   },
   { 
     id: 17, 
@@ -149,8 +149,8 @@ export const dataLagu = [
     artis: ".Feast", 
     album: "Membangun & Menghancurkan",
     durasi: "5:06", 
-    cover: "/public/img/membangun dan menghancurkan.jpg", 
-    url: "/public/songs/Feast - Tarot (Official Lyric Video).mp3"
+    cover: "/img/membangun dan menghancurkan.jpg", 
+    url: "/songs/Tarot.mp3"
   },
   { 
     id: 18, 
@@ -158,8 +158,8 @@ export const dataLagu = [
     artis: "Lomba Sihir", 
     album: "Selamat Datang Di Ujung Dunia",
     durasi: "3:09", 
-    cover: "/public/img/mungkin takut perubahan.jpg", 
-    url: "/public/songs/Lomba Sihir - Mungkin Takut Perubahan (Official Lyric Video).mp3"
+    cover: "/img/mungkin takut perubahan.jpg", 
+    url: "/songs/Mungkin.mp3"
   },
   { 
     id: 19, 
@@ -167,8 +167,8 @@ export const dataLagu = [
     artis: ".Feast", 
     album: "Membangun & Menghancurkan",
     durasi: "5:05", 
-    cover: "/public/img/membangun dan menghancurkan.jpg", 
-    url: "/public/songs/Feast - o,Tuan (Official Lyric Video) (1).mp3"
+    cover: "/img/membangun dan menghancurkan.jpg", 
+    url: "/songs/O-Tuan.mp3"
   },
   { 
     id: 20, 
@@ -176,8 +176,8 @@ export const dataLagu = [
     artis: "Barasuara", 
     album: "Selamat Datang Di Ujung Dunia",
     durasi: "4:59", 
-    cover: "/public/img/jalanan sadrah.jpg", 
-    url: "/public/songs/Barasuara - Terbuang Dalam Waktu (Official Lyric Video).mp3"
+    cover: "/img/jalanan sadrah.jpg", 
+    url: "/songs/Terbuang.mp3"
   },
   { 
     id: 21, 
@@ -185,8 +185,8 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "Who Knows Where Life Will Take You?",
     durasi: "4:04", 
-    cover: "/public/img/20250909_Chord-Kunci-Gitar-Enough-For-You-Reality-Club.jpg", 
-    url: "/public/songs/Reality Club - Enough for You (Official Lyric Video).mp3"
+    cover: "/img/20250909_Chord-Kunci-Gitar-Enough-For-You-Reality-Club.jpg", 
+    url: "/songs/Enough.mp3"
   },
   { 
     id: 22, 
@@ -194,8 +194,8 @@ export const dataLagu = [
     artis: ".Feast", 
     album: "Membangun & Menghancurkan",
     durasi: "4:43", 
-    cover: "/public/img/membangun dan menghancurkan.jpg", 
-    url: "/public/songs/Feast - Nina (Official Lyric Video) (1).mp3"
+    cover: "/img/membangun dan menghancurkan.jpg", 
+    url: "/songs/Nina.mp3"
   },
   { 
     id: 23, 
@@ -203,8 +203,8 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "What Do You Really Know?",
     durasi: "4:08", 
-    cover: "/public/img/what do you.jpg", 
-    url: "/public/songs/Alexandra - Reality Club (Official Lyric Video).mp3"
+    cover: "/img/what do you.jpg", 
+    url: "/songs/Alexandra.mp3"
   },
   { 
     id: 24, 
@@ -212,8 +212,8 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "What Do You Really Know?",
     durasi: "5:56", 
-    cover: "/public/img/what do you.jpg", 
-    url: "/public/songs/2112 - Reality Club (Official Lyric Video).mp3"
+    cover: "/img/what do you.jpg", 
+    url: "/songs/2112.mp3"
   },
   { 
     id: 25, 
@@ -221,7 +221,7 @@ export const dataLagu = [
     artis: "Reality Club", 
     album: "Is It The Answer?",
     durasi: "3:52", 
-    cover: "/public/img/makna_lagu_is_it_the_answer_reality_club.jpg", 
-    url: "/public/songs/Is It The Answer - Reality Club.mp3"
+    cover: "/img/makna_lagu_is_it_the_answer_reality_club.jpg", 
+    url: "/songs/Isit.mp3"
   },
 ];

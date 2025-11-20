@@ -11,8 +11,8 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
   );
 
   return (
-    // Padding bottom (pb-44) dibesarkan di Mobile agar tidak ketutup Player Control yang tinggi
-    <div className="flex-1 h-full overflow-y-auto bg-white pb-44 pt-16 md:pt-0 md:pb-24">
+    // PERUBAHAN 1: pb-44 diganti jadi pb-64 biar lagu terakhir ga mepet player
+    <div className="flex-1 h-full overflow-y-auto bg-white pb-64 pt-16 md:pt-0 md:pb-24">
       
       {/* HERO SECTION */}
       {menuAktif === 'beranda' && (
@@ -59,7 +59,6 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="text-gray-400 text-[10px] md:text-xs uppercase border-b border-gray-100">
-                {/* NOMOR URUT: HANYA MUNCUL DI DESKTOP (hidden md:table-cell) */}
                 <th className="py-3 w-8 md:w-12 text-center hidden md:table-cell">#</th>
                 <th className="py-3">Judul</th>
                 <th className="py-3 hidden md:table-cell">Album</th>
@@ -75,10 +74,15 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
                     group cursor-pointer transition-all duration-200 rounded-xl border-b border-gray-50 last:border-0
                     hover:bg-gray-50 hover:shadow-md hover:scale-[1.01] hover:z-10 relative
                     active:scale-[0.98] active:bg-red-50
-                    ${laguAktif.id === lagu.id ? "bg-red-50/60 border-l-4 border-red-500" : "bg-white"}
+                    
+                    ${laguAktif.id === lagu.id 
+                      // PERUBAHAN 2: md:border-l-4 (Garis tebal HANYA di Desktop)
+                      // Di Mobile cuma background merah aja
+                      ? "bg-red-50/60 md:border-l-4 border-red-500" 
+                      : "bg-white"
+                    }
                   `}
                 >
-                  {/* NOMOR URUT: HANYA MUNCUL DI DESKTOP */}
                   <td className="py-3 md:py-4 text-center text-gray-400 font-medium text-xs md:text-sm group-hover:text-red-500 transition-colors hidden md:table-cell">
                      {laguAktif.id === lagu.id ? <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full mx-auto animate-ping"/> : index + 1}
                   </td>

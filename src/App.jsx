@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'; // <-- 1. Tambah useEffect
+import React, { useState, useRef, useEffect } from 'react'; 
 import { Menu, Music } from 'lucide-react'; 
 
 import Sidebar from './components/Sidebar';
@@ -7,47 +7,56 @@ import PlayerControl from './components/PlayerControl';
 import FullPlayer from './components/FullPlayer';
 import { dataLagu } from './data/songs';
 
-// Halaman About
+// --- UPDATE HALAMAN ABOUT ---
 const AboutPage = () => (
-  <div className="flex-1 flex flex-col items-center justify-center p-8 text-center overflow-y-auto pb-24 pt-20 md:pt-8 animate-fade-in">
-    <div className="w-32 h-32 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-xl mx-auto transition-transform hover:scale-105 duration-500">
-      <img src="https://placehold.co/400" alt="Profile" className="w-full h-full object-cover" />
+  <div className="flex-1 flex flex-col items-center justify-center p-8 text-center overflow-y-auto pb-32 pt-24 md:pt-8 animate-fade-in">
+    {/* Gambar Herta */}
+    <div className="w-40 h-40 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-xl mx-auto transition-transform hover:scale-105 duration-500 border-4 border-white ring-2 ring-red-100">
+      <img 
+        src="https://media.tenor.com/taxnt3zsc_4AAAAi/seseren-the-herta.gif" 
+        alt="Herta Kuru Kuru" 
+        className="w-full h-full object-cover" 
+      />
     </div>
-    <h1 className="text-3xl font-bold text-gray-900 mb-2">Nama Kamu</h1>
-    <p className="text-red-500 font-medium mb-4">Multimedia Developer</p>
-    <p className="text-gray-500 max-w-md mx-auto text-sm">
-      Aplikasi ini dibuat sebagai tugas Multimedia Authoring.
-      Menggabungkan React, Tailwind CSS, dan Audio Engineering dasar.
-    </p>
+    
+    {/* Nama */}
+    <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">Herta</h1>
+    
+    {/* Role */}
+    <p className="text-red-500 font-bold mb-4 text-lg">Esteemed member #83 of the Genius Society</p>
+    
+    {/* Deskripsi */}
+    <div className="bg-red-50 px-6 py-3 rounded-full">
+       <p className="text-gray-600 text-sm font-medium">
+         Audio Web Player Project
+       </p>
+    </div>
   </div>
 );
 
 const App = () => {
-  // STATE
+  // ... (Kode logic di bawah ini TIDAK ADA YANG BERUBAH dari sebelumnya)
+  // Pastikan isi App di bawah ini sama persis dengan file App.jsx kamu yang terakhir
+  // Saya tulis ulang kerangkanya agar tidak bingung
+
   const [laguAktif, setLaguAktif] = useState(dataLagu[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0); 
   const [duration, setDuration] = useState(0); 
   const [menu, setMenu] = useState('beranda');
   
-  // State UI
   const [showFullPlayer, setShowFullPlayer] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const audioRef = useRef(null);
 
-  // --- 2. EFEK JUDUL BROWSER DINAMIS ---
   useEffect(() => {
     if (isPlaying) {
-      // Kalau lagu main, kasih ikon Play
       document.title = `▶ ${laguAktif.judul} - ${laguAktif.artis}`;
     } else {
-      // Kalau pause, judul biasa aja
-      document.title = `${laguAktif.judul} - ${laguAktif.artis} | MyMusic`;
+      document.title = "MyMusic - Web Player";
     }
-  }, [laguAktif, isPlaying]); // <-- Dijalankan tiap kali lagu/status berubah
-
-  // --- LOGIKA AUDIO ---
+  }, [laguAktif, isPlaying]);
 
   const handlePlayPause = () => {
     if (isPlaying) audioRef.current.pause();
@@ -106,7 +115,6 @@ const App = () => {
         />
       )}
 
-      {/* --- MOBILE HEADER BAR --- */}
       <div className="fixed top-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-md border-b border-gray-200 z-30 flex items-center px-4 gap-4 md:hidden shadow-sm">
         <button 
           onClick={() => setIsMobileMenuOpen(true)}
@@ -129,7 +137,7 @@ const App = () => {
       />
       
       {menu === 'about' ? (
-        <div className="pt-20 md:pt-0 w-full h-full">
+        <div className="pt-0 md:pt-0 w-full h-full">
            <AboutPage />
         </div>
       ) : (

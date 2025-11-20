@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react'; // <-- 1. Tambah useEffect
 import { Menu, Music } from 'lucide-react'; 
 
 import Sidebar from './components/Sidebar';
@@ -11,12 +11,13 @@ import { dataLagu } from './data/songs';
 const AboutPage = () => (
   <div className="flex-1 flex flex-col items-center justify-center p-8 text-center overflow-y-auto pb-24 pt-20 md:pt-8 animate-fade-in">
     <div className="w-32 h-32 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-xl mx-auto transition-transform hover:scale-105 duration-500">
-      <img src="https://media.tenor.com/taxnt3zsc_4AAAAi/seseren-the-herta.gif" alt="Profile" className="w-full h-full object-cover" />
+      <img src="https://placehold.co/400" alt="Profile" className="w-full h-full object-cover" />
     </div>
-    <h1 className="text-3xl font-bold text-gray-900 mb-2">Herta</h1>
-    <p className="text-red-500 font-medium mb-4">Esteemed member #83 of the Genius Society</p>
+    <h1 className="text-3xl font-bold text-gray-900 mb-2">Nama Kamu</h1>
+    <p className="text-red-500 font-medium mb-4">Multimedia Developer</p>
     <p className="text-gray-500 max-w-md mx-auto text-sm">
-      web audio player
+      Aplikasi ini dibuat sebagai tugas Multimedia Authoring.
+      Menggabungkan React, Tailwind CSS, dan Audio Engineering dasar.
     </p>
   </div>
 );
@@ -34,6 +35,17 @@ const App = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const audioRef = useRef(null);
+
+  // --- 2. EFEK JUDUL BROWSER DINAMIS ---
+  useEffect(() => {
+    if (isPlaying) {
+      // Kalau lagu main, kasih ikon Play
+      document.title = `▶ ${laguAktif.judul} - ${laguAktif.artis}`;
+    } else {
+      // Kalau pause, judul biasa aja
+      document.title = `${laguAktif.judul} - ${laguAktif.artis} | MyMusic`;
+    }
+  }, [laguAktif, isPlaying]); // <-- Dijalankan tiap kali lagu/status berubah
 
   // --- LOGIKA AUDIO ---
 
@@ -94,8 +106,7 @@ const App = () => {
         />
       )}
 
-      {/* --- MOBILE HEADER BAR (BARU) --- */}
-      {/* Hanya muncul di Mobile (md:hidden) */}
+      {/* --- MOBILE HEADER BAR --- */}
       <div className="fixed top-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-md border-b border-gray-200 z-30 flex items-center px-4 gap-4 md:hidden shadow-sm">
         <button 
           onClick={() => setIsMobileMenuOpen(true)}
@@ -118,7 +129,9 @@ const App = () => {
       />
       
       {menu === 'about' ? (
-        <AboutPage />
+        <div className="pt-20 md:pt-0 w-full h-full">
+           <AboutPage />
+        </div>
       ) : (
         <SongList 
           daftarLagu={dataLagu} 

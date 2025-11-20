@@ -11,8 +11,8 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
   );
 
   return (
-    // PERUBAHAN PENTING: pt-16 (Mobile) agar tidak ketutup Header, md:pt-0 (Desktop) reset padding
-    <div className="flex-1 h-full overflow-y-auto bg-white pb-24 pt-16 md:pt-0">
+    // Padding bottom (pb-44) dibesarkan di Mobile agar tidak ketutup Player Control yang tinggi
+    <div className="flex-1 h-full overflow-y-auto bg-white pb-44 pt-16 md:pt-0 md:pb-24">
       
       {/* HERO SECTION */}
       {menuAktif === 'beranda' && (
@@ -21,11 +21,11 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
             <img 
               src={infoAlbum.cover} 
               alt="Album" 
-              className="w-40 h-40 md:w-52 md:h-52 rounded-2xl shadow-2xl object-cover transform transition-transform duration-500 hover:scale-105"
+              className="w-32 h-32 md:w-52 md:h-52 rounded-2xl shadow-2xl object-cover transform transition-transform duration-500 hover:scale-105"
             />
             <div>
               <h4 className="text-xs md:text-sm font-bold text-red-500 uppercase mb-2 tracking-wider animate-pulse">Album Terbaru</h4>
-              <h1 className="text-3xl md:text-6xl font-black text-gray-900 mb-2 leading-tight">
+              <h1 className="text-2xl md:text-6xl font-black text-gray-900 mb-2 leading-tight">
                 {infoAlbum.album}
               </h1>
               <p className="text-gray-500 font-medium text-sm md:text-lg">
@@ -38,7 +38,7 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
 
       {/* SEARCH */}
       {menuAktif === 'cari' && (
-        <div className="p-4 md:p-8 sticky top-0 bg-white/95 backdrop-blur z-10 border-b border-gray-100">
+        <div className="p-4 md:p-8 sticky top-0 md:top-0 bg-white/95 backdrop-blur z-10 border-b border-gray-100">
           <div className="relative group">
             <Search className="absolute left-4 top-3.5 text-gray-400 group-hover:text-red-500 transition-colors" size={20} />
             <input 
@@ -59,7 +59,8 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="text-gray-400 text-[10px] md:text-xs uppercase border-b border-gray-100">
-                <th className="py-3 w-8 md:w-12 text-center">#</th>
+                {/* NOMOR URUT: HANYA MUNCUL DI DESKTOP (hidden md:table-cell) */}
+                <th className="py-3 w-8 md:w-12 text-center hidden md:table-cell">#</th>
                 <th className="py-3">Judul</th>
                 <th className="py-3 hidden md:table-cell">Album</th>
                 <th className="py-3 text-right"><Clock size={14} className="ml-auto"/></th>
@@ -77,17 +78,19 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
                     ${laguAktif.id === lagu.id ? "bg-red-50/60 border-l-4 border-red-500" : "bg-white"}
                   `}
                 >
-                  <td className="py-3 md:py-4 text-center text-gray-400 font-medium text-xs md:text-sm group-hover:text-red-500 transition-colors">
+                  {/* NOMOR URUT: HANYA MUNCUL DI DESKTOP */}
+                  <td className="py-3 md:py-4 text-center text-gray-400 font-medium text-xs md:text-sm group-hover:text-red-500 transition-colors hidden md:table-cell">
                      {laguAktif.id === lagu.id ? <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full mx-auto animate-ping"/> : index + 1}
                   </td>
+                  
                   <td className="py-3 md:py-4">
                     <div className="flex items-center gap-3 md:gap-4">
-                      <img src={lagu.cover} className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover shadow-sm group-hover:shadow-md transition-shadow" />
+                      <img src={lagu.cover} className="w-12 h-12 md:w-12 md:h-12 rounded-lg object-cover shadow-sm group-hover:shadow-md transition-shadow" />
                       <div className="min-w-0">
                         <p className={`font-semibold text-sm md:text-base truncate pr-2 transition-colors ${laguAktif.id === lagu.id ? "text-red-500" : "text-gray-900 group-hover:text-black"}`}>
                           {lagu.judul}
                         </p>
-                        <p className="text-xs text-gray-500 md:hidden truncate">{lagu.artis}</p>
+                        <p className="text-xs text-gray-500 truncate">{lagu.artis}</p>
                       </div>
                     </div>
                   </td>

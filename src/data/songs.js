@@ -87,7 +87,7 @@ export const dataLagu = [
     album: "Untuk Dunia, Cinta, Dan Kotornya",
     durasi: "3:58", 
     cover: "/img/untuk dunia cinta.jpg", 
-    url: "/songs/DiAkhir Perang.mp3" 
+    url: "/songs/DiAkhir.mp3" 
   },
   { 
     id: 11, 
@@ -96,7 +96,7 @@ export const dataLagu = [
     album: "Anything You Want",
     durasi: "3:56", 
     cover: "/img/anything you want.jpg", 
-    url: "/songs/AnythingU Want.mp3" 
+    url: "/songs/AnythingU.mp3" 
   },
   { 
     id: 12, 

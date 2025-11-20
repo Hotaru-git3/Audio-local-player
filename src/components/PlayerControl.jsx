@@ -97,7 +97,7 @@ const PlayerControl = ({
             <button onClick={onNext} className="text-gray-400 hover:text-gray-900 transition transform hover:scale-110"><SkipForward size={20} fill="currentColor"/></button>
           </div>
           
-          <div className="w-full flex items-center gap-3 text-xs text-gray-400 font-mono select-none">
+          <div className="w-full flex items-center gap-3 text-xs text-gray-700 font-mono select-none">
             <span className="w-10 text-right">{formatWaktu(waktuSekarang)}</span>
             <div className="h-1.5 flex-1 bg-gray-100 rounded-full overflow-hidden relative">
                <div className="h-full bg-red-500 rounded-full transition-all duration-300 ease-linear" style={{ width: `${persentase}%` }}></div>

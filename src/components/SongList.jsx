@@ -12,7 +12,7 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
 
   return (
     // PERUBAHAN 1: pb-44 diganti jadi pb-64 biar lagu terakhir ga mepet player
-    <div className="flex-1 h-full overflow-y-auto bg-white pb-64 pt-16 md:pt-0 md:pb-24">
+    <div className="flex-1 h-full overflow-y-auto md:overflow-x-hidden bg-white pb-64 pt-16 md:pt-0 md:pb-24">
       
       {/* HERO SECTION */}
       {menuAktif === 'beranda' && (
@@ -24,12 +24,12 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
               className="w-32 h-32 md:w-52 md:h-52 rounded-2xl shadow-2xl object-cover transform transition-transform duration-500 hover:scale-105"
             />
             <div>
-              <h4 className="text-xs md:text-sm font-bold text-red-500 uppercase mb-2 tracking-wider animate-pulse">Album Terbaru</h4>
+              <h4 className="text-xs md:text-sm font-bold text-red-500 uppercase mb-2 tracking-wider animate-pulse">Album Musik</h4>
               <h1 className="text-2xl md:text-6xl font-black text-gray-900 mb-2 leading-tight">
                 {infoAlbum.album}
               </h1>
               <p className="text-gray-500 font-medium text-sm md:text-lg">
-                {infoAlbum.artis} • 2025
+                {infoAlbum.artis} • 2023
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
         {laguTampil.length === 0 ? (
           <div className="text-center text-gray-400 py-10 text-sm">Lagu tidak ditemukan...</div>
         ) : (
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse md:mb-2">
             <thead>
               <tr className="text-gray-400 text-[10px] md:text-xs uppercase border-b border-gray-100">
                 <th className="py-3 w-8 md:w-12 text-center hidden md:table-cell">#</th>
@@ -76,9 +76,7 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
                     active:scale-[0.98] active:bg-red-50
                     
                     ${laguAktif.id === lagu.id 
-                      // PERUBAHAN 2: md:border-l-4 (Garis tebal HANYA di Desktop)
-                      // Di Mobile cuma background merah aja
-                      ? "bg-red-50/60 md:border-l-4 border-red-500" 
+                      ? "bg-red-50/60 border-red-500" 
                       : "bg-white"
                     }
                   `}

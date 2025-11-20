@@ -9,9 +9,9 @@ import { dataLagu } from './data/songs';
 
 // --- UPDATE HALAMAN ABOUT ---
 const AboutPage = () => (
-  <div className="flex-1 flex flex-col items-center justify-center p-8 text-center overflow-y-auto pb-32 pt-24 md:pt-8 animate-fade-in">
+  <div className="flex-1 flex flex-col items-center justify-center p-8 text-center overflow-y-auto pb-32 pt-24 md:pt-8 md:my-auto md:mx-auto  animate-fade-in">
     {/* Gambar Herta */}
-    <div className="w-40 h-40 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-xl mx-auto transition-transform hover:scale-105 duration-500 border-4 border-white ring-2 ring-red-100">
+    <div className="w-40 h-40 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-xl mx-auto  transition-transform hover:scale-105 duration-500 border-4 border-white ring-2 ring-red-100">
       <img 
         src="https://media.tenor.com/taxnt3zsc_4AAAAi/seseren-the-herta.gif" 
         alt="Herta Kuru Kuru" 
@@ -35,10 +35,6 @@ const AboutPage = () => (
 );
 
 const App = () => {
-  // ... (Kode logic di bawah ini TIDAK ADA YANG BERUBAH dari sebelumnya)
-  // Pastikan isi App di bawah ini sama persis dengan file App.jsx kamu yang terakhir
-  // Saya tulis ulang kerangkanya agar tidak bingung
-
   const [laguAktif, setLaguAktif] = useState(dataLagu[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0); 
@@ -54,7 +50,7 @@ const App = () => {
     if (isPlaying) {
       document.title = `▶ ${laguAktif.judul} - ${laguAktif.artis}`;
     } else {
-      document.title = "MyMusic - Web Player";
+      document.title = "Herta Music - Web Player";
     }
   }, [laguAktif, isPlaying]);
 
@@ -125,7 +121,7 @@ const App = () => {
 
         <div className="flex items-center gap-2 text-red-500 font-bold text-lg">
           <Music size={20} />
-          <span>MyMusic</span>
+          <span>Herta Music</span>
         </div>
       </div>
 

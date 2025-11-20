@@ -25,7 +25,7 @@ const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
         <div className="flex items-center justify-between mb-10">
           <div className="flex items-center gap-2 text-red-500 font-bold text-xl tracking-tight">
             <Music size={28} />
-            <span>MyMusic</span>
+            <span>Herta Music</span>
           </div>
           
           {/* Tombol Close (Hanya di HP) */}
@@ -58,7 +58,7 @@ const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
 
         {/* Footer Kecil */}
         <div className="mt-auto text-xs text-gray-400 md:hidden">
-          &copy; 2025 MyMusic App
+          &copy; 2025 Herta Music App
         </div>
       </div>
     </>

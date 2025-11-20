@@ -95,7 +95,7 @@ const FullPlayer = ({
                   style={{ width: `${persentase}%` }}
                 ></div>
               </div>
-              <div className="flex justify-between text-xs font-bold text-gray-600 font-mono">
+              <div className="flex justify-between text-xs font-bold text-gray-700 font-mono">
                 <span>{formatWaktu(waktuSekarang)}</span>
                 <span>{formatWaktu(totalDurasi)}</span>
               </div>

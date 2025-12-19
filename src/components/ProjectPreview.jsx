@@ -30,7 +30,7 @@ const ProjectGallery = () => {
         {dataProjects.map((project) => (
           <div 
             key={project.id} 
-            // Tambahin onClick di sini bro
+            // Tambahin onClick di sini
             onClick={() => handleCardClick(project.link)} 
             className="group bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 hover:-translate-y-1 cursor-pointer"
           >

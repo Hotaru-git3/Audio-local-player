@@ -22,13 +22,10 @@ const FullPlayer = ({
   const persentase = totalDurasi ? (waktuSekarang / totalDurasi) * 100 : 0;
 
   return (
-    // CONTAINER UTAMA
-    // fixed inset-0: Menutupi seluruh layar
-    // z-[60]: Paling atas
     <div className="fixed inset-0 z-[60] flex flex-col bg-white text-gray-900">
       
       {/* --- 1. BACKGROUND (FIXED) --- */}
-      {/* Kita pisahkan background biar dia DIAM saat konten di-scroll */}
+      {/* pisahkan background biar dia DIAM saat konten di-scroll */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img 
           src={laguAktif.cover} 
@@ -39,7 +36,7 @@ const FullPlayer = ({
       </div>
 
       {/* --- 2. WRAPPER SCROLLABLE --- */}
-      {/* overflow-y-auto: INI KUNCINYA! Biar bisa di-scroll naik turun di HP */}
+      {/* overflow-y-auto: Biar bisa di-scroll naik turun di HP */}
       <div className="w-full h-full overflow-y-auto flex flex-col">
         
         {/* TOMBOL CLOSE & HANDLE BAR */}

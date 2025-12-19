@@ -1,4 +1,5 @@
 export const dataLagu = [
+  // --- LAGU-LAGU HINDIA / POP (YANG SUDAH ADA) ---
   { 
     id: 1, 
     judul: "Iya, Sebentar...", 
@@ -222,6 +223,39 @@ export const dataLagu = [
     album: "Is It The Answer?",
     durasi: "3:52", 
     cover: "/img/makna_lagu_is_it_the_answer_reality_club.jpg", 
-    url: "/songs/Isit.mp3"
+    url: "/songs/Isit.mp3" 
   },
+
+  // --- BACKGROUND MUSIC GAME (HIDDEN) ---
+  {
+    id: 201, 
+    judul: "School Theme",
+    url: "/bgm/1.mp3", // Sesuai folder
+    isHidden: true 
+  },
+  {
+    id: 202, 
+    judul: "Corridor Theme",
+    url: "/bgm/2com.mp3", // Sesuai folder
+    isHidden: true
+  },
+  {
+    id: 203, 
+    judul: "Canteen Theme",
+    url: "/bgm/3com.mp3", // Sesuai folder
+    isHidden: true
+  },
+  {
+    id: 204, 
+    judul: "Park Theme",
+    url: "/bgm/4.mp3", // Sesuai folder
+    isHidden: true,
+    disabled: true
+  },
+  {
+    id: 205, 
+    judul: "Sunset Theme",
+    url: "/bgm/Sunset2.mp3", // Sesuai folder
+    isHidden: true
+  }
 ];

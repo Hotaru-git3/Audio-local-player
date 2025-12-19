@@ -5,13 +5,15 @@ const SongList = ({ daftarLagu, laguAktif, fungsiGantiLagu, menuAktif }) => {
   const infoAlbum = daftarLagu[0];
   const [kataKunci, setKataKunci] = useState("");
 
-  const laguTampil = daftarLagu.filter(lagu => 
-    lagu.judul.toLowerCase().includes(kataKunci.toLowerCase()) ||
-    lagu.artis.toLowerCase().includes(kataKunci.toLowerCase())
-  );
+  // --- BAGIAN PENTING: FILTER HIDDEN ---
+  const laguTampil = daftarLagu
+    .filter(lagu => !lagu.isHidden) // <--- Step 1: Buang yang hidden
+    .filter(lagu =>                 // <--- Step 2: Baru cari berdasarkan text
+      lagu.judul.toLowerCase().includes(kataKunci.toLowerCase()) ||
+      lagu.artis.toLowerCase().includes(kataKunci.toLowerCase())
+    );
 
   return (
-    // PERUBAHAN 1: pb-44 diganti jadi pb-64 biar lagu terakhir ga mepet player
     <div className="flex-1 h-full overflow-y-auto md:overflow-x-hidden bg-white pb-64 pt-16 md:pt-0 md:pb-24">
       
       {/* HERO SECTION */}

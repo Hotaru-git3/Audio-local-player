@@ -1,19 +1,18 @@
 import React from 'react';
-import { Music, Home, Search, Info, X } from 'lucide-react';
+import { Music, Home, Search, Info, X, Gamepad2, Video } from 'lucide-react'; 
 
 const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
   return (
     <>
-      {/* --- 1. MOBILE BACKDROP (Layar Gelap) --- */}
-      {/* Muncul cuma di HP (md:hidden) saat menu terbuka */}
+      {/* MOBILE BACKDROP */}
       {isOpen && (
         <div 
           className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden transition-opacity"
-          onClick={onClose} // Klik area gelap untuk tutup menu
+          onClick={onClose}
         ></div>
       )}
 
-      {/* --- 2. SIDEBAR UTAMA --- */}
+      {/* SIDEBAR UTAMA */}
       <div className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-gray-50 border-r border-gray-200 
         transform transition-transform duration-300 ease-in-out flex flex-col p-6 h-full
@@ -23,13 +22,11 @@ const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
         
         {/* Header Sidebar */}
         <div className="flex items-center justify-between mb-10">
-          <div className="flex items-center gap-2 text-red-500 font-bold text-xl tracking-tight">
+          <div className="flex items-center gap-2 text-red-500 font-bold text-l tracking-tight">
             <Music size={28} />
-            <span>Herta Music</span>
+            <span>Kelompok 3 Music's</span>
           </div>
-          
-          {/* Tombol Close (Hanya di HP) */}
-          <button onClick={onClose} className="md:hidden p-1 text-gray-500 hover:bg-gray-200 rounded-full hover:cursor-pointer transition">
+          <button onClick={onClose} className="md:hidden p-1 text-gray-500 hover:bg-gray-200 rounded-full transition">
             <X size={24} />
           </button>
         </div>
@@ -48,6 +45,23 @@ const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
             active={menuAktif === 'cari'} 
             onClick={() => { gantiMenu('cari'); onClose(); }} 
           />
+          
+          {/* MENU GAME MODE */}
+          <NavItem 
+            icon={<Gamepad2 size={20} />} 
+            label="Story Mode" 
+            active={menuAktif === 'game'} 
+            onClick={() => { gantiMenu('game'); onClose(); }} 
+          />
+
+          {/* MENU BARU: PROJECT GALLERY (VIDEOS) */}
+          <NavItem 
+            icon={<Video size={20} />} 
+            label="Project Gallery" 
+            active={menuAktif === 'projects'} 
+            onClick={() => { gantiMenu('projects'); onClose(); }} 
+          />
+
           <NavItem 
             icon={<Info size={20} />} 
             label="About" 
@@ -56,7 +70,6 @@ const Sidebar = ({ menuAktif, gantiMenu, isOpen, onClose }) => {
           />
         </div>
 
-        {/* Footer Kecil */}
         <div className="mt-auto text-xs text-gray-400 md:hidden">
           &copy; 2025 Herta Music App
         </div>

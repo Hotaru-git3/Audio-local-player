@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play, RotateCcw, MonitorPlay, Minus, X } from 'lucide-react'; 
 import { storyScript } from '../data/story'; 
 
@@ -7,31 +7,8 @@ const VisualNovel = ({ gantiLagu, daftarLagu, onMinimize, onClose }) => {
   const [currentSceneId, setCurrentSceneId] = useState(1);
   
   const scene = storyScript.find(s => s.id === currentSceneId);
-  const voRef = useRef(null);
 
-  // --- 1. LOGIC VOICE OVER (Folder: /voiceover/) ---
-  useEffect(() => {
-    // Stop VO sebelumnya biar gak tumpang tindih
-    if (voRef.current) {
-      voRef.current.pause();
-      voRef.current.currentTime = 0;
-    }
-
-    // Play VO cuma pas statusnya 'playing' dan scene punya voiceId
-    if (gameStatus === 'playing' && scene?.voiceId) {
-      const audioPath = `/voiceover/${scene.voiceId}.mp3`;
-      voRef.current = new Audio(audioPath);
-      voRef.current.volume = 1.0; 
-      voRef.current.play().catch(err => console.log("VO Error:", err));
-    }
-
-    // Cleanup pas scene pindah atau komponen tutup
-    return () => {
-      if (voRef.current) voRef.current.pause();
-    };
-  }, [currentSceneId, gameStatus, scene]);
-
-  // --- 2. LOGIC BGM (Lagu Tema Langsung Jalan) ---
+  // --- 1. LOGIC BGM (Lagu Tema Langsung Jalan) ---
   useEffect(() => {
     // Logic ini jalan gak peduli 'splash' atau 'playing'
     // Jadi pas awal buka (currentSceneId = 1), lagu langsung kepanggil
@@ -43,7 +20,7 @@ const VisualNovel = ({ gantiLagu, daftarLagu, onMinimize, onClose }) => {
     }
   }, [currentSceneId, scene, daftarLagu, gantiLagu]); 
 
-  // --- 3. LOGIC SFX KLIK ---
+  // --- 2. LOGIC SFX KLIK ---
   const playSFX = (sfxId = 1) => {
     const sfx = new Audio(`/sfx/${sfxId}.mp3`); 
     sfx.play().catch(err => console.log("SFX Error:", err));
@@ -67,11 +44,7 @@ const VisualNovel = ({ gantiLagu, daftarLagu, onMinimize, onClose }) => {
     }
   };
 
-  // Handler buat Close agar VO bener-bener mati
   const handleCloseGame = () => {
-    if (voRef.current) {
-      voRef.current.pause();
-    }
     onClose();
   };
 

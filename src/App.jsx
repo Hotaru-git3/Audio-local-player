@@ -134,6 +134,19 @@ const App = () => {
         onLoadedMetadata={(e) => setDuration(e.target.duration)} 
         onEnded={handleNext} // Auto next pas lagu abis
       />
+    
+    {/* --- TAMBAHAN: TOMBOL HAMBURGER (Cuma muncul di HP) --- */}
+    {!isMobileMenuOpen && (
+      <button 
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="fixed top-4 left-4 z-40 p-2 bg-white/80 backdrop-blur-md rounded-lg shadow-md md:hidden text-gray-700 hover:text-red-500 transition"
+      >
+        <Menu size={24} />
+      </button>
+    )}
+    {/* -------------------------------------------------------- */}
+
+    <audio/>
       
       {gameMode !== 'closed' && (
         <div className={gameMode === 'minimized' ? 'hidden' : 'block'}>
@@ -169,6 +182,8 @@ const App = () => {
           onPrev={handlePrev} 
         />
       )}
+
+      
 
       <Sidebar 
         menuAktif={gameMode === 'open' || gameMode === 'minimized' ? 'game' : menu} 
